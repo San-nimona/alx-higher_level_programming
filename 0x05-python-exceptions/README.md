@@ -37,4 +37,3 @@ In Python, errors and exceptions are a fundamental part of the language's error-
 </ul>
 Clean-up actions, also known as resource management or finalization, are essential when you need to ensure that certain tasks or resources are properly handled and released, especially in the context of exceptions. 
 </ol>
-<p style="text-color: green"> Prepared by Brian Katuu </p>
