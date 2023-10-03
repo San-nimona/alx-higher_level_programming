@@ -1,3 +1,3 @@
-def copy_list(l):
-    cpy = l[:]
+def copy_list(lst):
+    cpy = lst[:]
     return (cpy)
