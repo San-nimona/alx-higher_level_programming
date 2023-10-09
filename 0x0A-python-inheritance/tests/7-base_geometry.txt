@@ -26,3 +26,21 @@ How to use 7-base_geometry
 ... 	print("[{}] {}".format(e.__class__.__name__, e))
 ...
 [ValueError] distance must be greater than 0
+>>> try:
+...     bg.integer_validator("distance", -4.6)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] distance must be an integer
+>>> try:
+...     bg.integer_validator("distance", True)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] distance must be an integer
+>>> try:
+...     bg.integer_validator("distance", 4.6)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] distance must be an integer
