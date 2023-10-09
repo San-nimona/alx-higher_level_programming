@@ -9,5 +9,3 @@ class MyList(list):
         """Prints the list in a sorte order"""
         new_list = sorted(self)
         print(new_list)
-    def __str__(self):
-        return super().__str__()
