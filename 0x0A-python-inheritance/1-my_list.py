@@ -6,6 +6,7 @@ class MyList(list):
     """Inherits from list\
         Prints a list in a sorted ascending order"""
     def print_sorted(self):
+        """Prints the list in a sorte order"""
         if not isinstance (self, list):
             raise TypeError('Must be a list')
         for i in self:
