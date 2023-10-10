@@ -1,26 +1,34 @@
 #!/usr/bin/python3
-"""9-student.py"""
+"""
+This module contains the class Student
+"""
 
 
 class Student:
-    """
-    A class that defines a student by: firts and last name and age
-    """
+    """Class representation of student"""
     def __init__(self, first_name, last_name, age):
-        """Instantiation with name and age"""
+        """Initializes the student"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """
-        retrieves a dictionary representation of a Student
-        """
+        """returns a dictionary representation of a Student instance
+        with specified attributes"""
+        if attrs is None:
+            return self.__dict__
+        new_dict = {}
+        for a in attrs:
+            try:
+                new_dict[a] = self.__dict__[a]
+            except FileNotFoundError:
+                pass
+        return new_dict
 
-        if (type(attrs) == list) and all(type(i) == str for i in attrs):
-            return{i: getattr(self, i) for i in attrs if hasattr(self, i)}
-        return self.__dict__
     def reload_from_json(self, json):
-        """Reloads attributes from disk"""
-
-        self.__dict__ = json
+        """replaces all attributes of the Student instance"""
+        for key in json:
+            try:
+                setattr(self, key, json[key])
+            except FileNotFoundError:
+                pass
