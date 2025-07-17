@@ -2,17 +2,19 @@
 
 const myArgs = process.argv.slice(2);
 
-let x = Number(myArgs[0]);
+const x = Number(myArgs[0]);
 let i;
 let j;
+let str = '';
 
-if ((myArgs[0]) & x != 'NaN'){
-	for( i = 0; i < x; i++){
-		console.log('X');
-		for( j = 0; j < x; j++){
-			console.log('X');
-		}
-	}
+if ((myArgs[0]) && x !== 'NaN') {
+  for (j = 0; j < x; j++) {
+    for (i = 0; i < x; i++) {
+      str += 'X';
+    }
+    console.log(str);
+    str = '';
+  }
 } else {
-	console.log('Missing size');
+  console.log('Missing size');
 }
