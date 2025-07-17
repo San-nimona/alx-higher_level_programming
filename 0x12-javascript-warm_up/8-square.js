@@ -7,7 +7,7 @@ let i;
 let j;
 let str = '';
 
-if ((myArgs[0]) && x !== 'NaN') {
+if ((myArgs[0]) && x > 0) {
   for (j = 0; j < x; j++) {
     for (i = 0; i < x; i++) {
       str += 'X';
@@ -16,5 +16,6 @@ if ((myArgs[0]) && x !== 'NaN') {
     str = '';
   }
 } else {
-  console.log('Missing size');
+	console.log('Missing size');
 }
+
