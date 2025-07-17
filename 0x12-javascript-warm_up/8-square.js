@@ -16,6 +16,5 @@ if ((myArgs[0]) && x > 0) {
     str = '';
   }
 } else {
-	console.log('Missing size');
+  console.log('Missing size');
 }
-
