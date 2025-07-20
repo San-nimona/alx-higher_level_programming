@@ -1,0 +1,31 @@
+#!/usr/bin/node
+
+const x = process.argv.slice(2);
+let num;
+let i;
+let array = [];
+let temp;
+
+for (i = 0; i < x.length; i++){
+	num = Number(x[i]);
+	array.push(num);
+}
+function sec_biggest(){
+	if (!x[0] || !x[1]){
+		console.log(0);
+	} else {
+		function sort(){
+			let newArray = [];
+			for (i = 0; i < array.length; i++){
+				if (array[i] > array[i + 1]){
+					temp = array[i];
+					array[i] = array[i + 1];
+					array[i + 1] = temp;;
+				}
+			}
+			console.log(array);
+		}
+		sort();
+	}
+}
+sec_biggest();
