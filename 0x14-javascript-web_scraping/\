@@ -1,0 +1,25 @@
+#!/usr/bin/node
+
+const request = require('request');
+
+const id = 1;
+const url = process.argv[2];
+
+request (url, {json: true}, function (errror, response, body){
+	let len = Number(body.count);
+	let films = 0;
+	for (let i = 1; i <= len; i++){
+		let url1 = url + `${i}/`;
+		request (url1, {json: true}, function (error, response, body){
+			body.characters.forEach(function (myArrayChar){
+				myArrayChar.forEach(function (myChar){
+					if (myChar=== "https://swapi-api.alx-tools.com/api/people/18/"){
+						film++;
+					}
+				})
+			})
+		})
+	}
+	console.log(len);
+	console.log(films);
+})
